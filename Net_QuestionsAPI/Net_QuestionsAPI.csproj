@@ -18,10 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Questions_NET.DataAccess\Questions_NET.DataAccess.csproj" />
     <ProjectReference Include="..\Questions_NET.Models\Questions_NET.Models.csproj" />
   </ItemGroup>
