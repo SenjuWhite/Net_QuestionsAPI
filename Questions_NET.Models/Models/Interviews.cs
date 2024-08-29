@@ -10,6 +10,8 @@ namespace Net_QuestionsAPI.Models
         public string InterviewLink { get; set; }
         [Required]
         public int InterviewLevel { get; set; }
+        [Required]
+        public string InterviewName { get; set;}
 
     }
 }

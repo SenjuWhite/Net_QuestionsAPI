@@ -11,7 +11,7 @@ namespace Net_QuestionsAPI.Controllers
         private readonly IUnitOfWork _unitOfWork;
         public QuestionController(IUnitOfWork unitOfWork)
         {
-             _unitOfWork = unitOfWork;
+            _unitOfWork = unitOfWork;
         }
 
         //[HttpGet("get_all")]
@@ -36,7 +36,7 @@ namespace Net_QuestionsAPI.Controllers
                             QuestionInfo = g.Key.QuestionInfo,
                             QuestionId = g.Key.QuestionId,
                             ciq = g.Count(),
-                            Frequency = (g.Count()*100)/ interviews.Count(),
+                            Frequency = (g.Count() * 100) / interviews.Count(),
                             InterviewLevel = string.Join(",", g.Select(x => x.i.InterviewLevel).Distinct().OrderBy(level => level))
                         };
 
@@ -56,7 +56,7 @@ namespace Net_QuestionsAPI.Controllers
             var questions = await _unitOfWork.Question.GetAllASync();
             var result = questions.Where(q => q.QuestionId == id).Select(x => x).FirstOrDefault();
             return Ok(result);
-    
+
         }
         [HttpGet("get_questionlinks")]
         public async Task<IActionResult> GetQuestionLinks(int id)
@@ -67,7 +67,7 @@ namespace Net_QuestionsAPI.Controllers
 
         }
         [HttpGet("get_timecodes")]
-        
+
         public async Task<IActionResult> GetTimecodes(int id)
         {
             var interviews = await _unitOfWork.Interview.GetAllASync();
@@ -76,11 +76,18 @@ namespace Net_QuestionsAPI.Controllers
             var result = from q in query
                          join i in interviews on q.InterviewId equals i.InterviewId
                          select new
-                         {
+                         {   InterviewName = i.InterviewName,
                              Timecode = q.Timecode,
-                             Link = i.InterviewLink
+                             Link = i.InterviewLink,
+
                          };
             return Ok(result);
+        }
+        [HttpGet("get_interviews")]
+        public async Task<IActionResult> GetInterviews()
+        {
+            var interviews = await _unitOfWork.Interview.GetAllASync();
+            return Ok(interviews);
         }
     }
 }
