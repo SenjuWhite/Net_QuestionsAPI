@@ -5,9 +5,14 @@ VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net_QuestionsAPI", "Net_QuestionsAPI\Net_QuestionsAPI.csproj", "{5FE832FE-4657-4C0A-A436-57C40732F4C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Questions_NET.DataAccess", "Questions_NET.DataAccess\Questions_NET.DataAccess.csproj", "{2DC9BE00-EA43-4B6E-B2F1-87BD199E0E2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Questions_NET.DataAccess", "Questions_NET.DataAccess\Questions_NET.DataAccess.csproj", "{2DC9BE00-EA43-4B6E-B2F1-87BD199E0E2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Questions_NET.Models", "Questions_NET.Models\Questions_NET.Models.csproj", "{827D623B-0D47-4834-8BD1-B6EF805499BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Questions_NET.Models", "Questions_NET.Models\Questions_NET.Models.csproj", "{827D623B-0D47-4834-8BD1-B6EF805499BF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CCCBAEC3-5D65-4CA3-B331-ED28D592E22D}"
+	ProjectSection(SolutionItems) = preProject
+		.env = .env
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

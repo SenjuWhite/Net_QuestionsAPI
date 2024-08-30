@@ -3,6 +3,7 @@ using Questions_NET.DataAccess;
 using Questions_NET.DataAccess.Repository.IRepository;
 using Questions_NET.DataAccess.Repository;
 
+
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -11,6 +12,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Configuration.AddEnvironmentVariables();
+
 //builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
 //builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
 //builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
@@ -27,6 +30,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-
+var test = Environment.GetEnvironmentVariable("MESSAGE");
+Console.WriteLine(test);
 
  app.Run();
