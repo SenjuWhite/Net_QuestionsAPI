@@ -5,7 +5,7 @@ using Questions_NET.DataAccess.Repository;
 using DotNetEnv;
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = Environment.GetEnvironmentVariable("connectionString") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+var connectionString = Environment.GetEnvironmentVariable("SQLAZURECONNSTR_connectionString") ?? throw new InvalidOperationException("Connection string 'SQLAZURECONNSTR_connectionString' not found.");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 options.UseSqlServer(connectionString));
 builder.Services.AddControllers();
@@ -26,5 +26,4 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-
  app.Run();
