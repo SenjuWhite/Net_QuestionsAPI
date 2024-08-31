@@ -15,15 +15,15 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Configuration.AddEnvironmentVariables();
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsProduction())
 {
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-        c.RoutePrefix = string.Empty;
-    });
+            });
 }
+
 
 app.UseHttpsRedirection();
 
