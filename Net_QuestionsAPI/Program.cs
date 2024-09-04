@@ -22,7 +22,7 @@ var app = builder.Build();
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
         c.RoutePrefix = string.Empty;
     });
-
+Console.WriteLine("test");
 
 
 app.UseHttpsRedirection();
