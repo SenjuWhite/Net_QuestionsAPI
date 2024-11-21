@@ -5,6 +5,17 @@ using Questions_NET.DataAccess.Repository;
 using DotNetEnv;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp",
+        policy =>
+        {
+            policy.WithOrigins("https://silksharp.com") 
+                  .AllowAnyHeader()
+                  .AllowAnyMethod()
+                  .AllowCredentials();
+        });
+});
 var connectionString = Environment.GetEnvironmentVariable("SQLAZURECONNSTR_connectionString") ?? throw new InvalidOperationException("Connection string 'SQLAZURECONNSTR_connectionString' not found.");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 options.UseSqlServer(connectionString));
@@ -22,11 +33,10 @@ var app = builder.Build();
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
         c.RoutePrefix = string.Empty;
     });
-Console.WriteLine("test");
 
 
 app.UseHttpsRedirection();
-
+app.UseCors("AllowReactApp");
 app.UseAuthorization();
 
 app.MapControllers();
