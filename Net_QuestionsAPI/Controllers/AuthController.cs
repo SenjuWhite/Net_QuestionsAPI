@@ -64,12 +64,12 @@ namespace Net_QuestionsAPI.Controllers
         new Claim(ClaimTypes.Email, user.Email)
     };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt_Key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(
-                issuer: _configuration["Jwt:Issuer"],
-                audience: _configuration["Jwt:Audience"],
+                issuer: _configuration["Jwt_Issuer"],
+                audience: _configuration["Jwt_Audience"],
                 claims: claims,
                 expires: DateTime.Now.AddHours(24),  // Термін дії токену
                 signingCredentials: creds

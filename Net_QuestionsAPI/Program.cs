@@ -33,9 +33,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateIssuer = true,
             ValidateAudience = true,
             ValidateLifetime = true,
-            ValidIssuer = builder.Configuration["Jwt:Issuer"], 
-            ValidAudience = builder.Configuration["Jwt:Audience"], 
-            IssuerSigningKey = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])) // Ваш секретний ключ
+            ValidIssuer = builder.Configuration["Jwt_Issuer"], 
+            ValidAudience = builder.Configuration["Jwt_Audience"], 
+            IssuerSigningKey = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt_Key"])) 
         };
     });
 builder.Services.AddControllers();
