@@ -12,6 +12,8 @@ namespace Questions_NET.DataAccess.Repository.IRepository
         IQuestionLinksRepository QuestionLink { get; }
         IInterviewRepository Interview { get; }
         IInterviewQuestionRepository InterviewQuestion { get; }
-        Task SaveASync();
+        IUserRepository User { get; }
+        IFavoriteQuestionRepository FavoriteQuestion { get; }
+        Task SaveAsync();
     }
 }

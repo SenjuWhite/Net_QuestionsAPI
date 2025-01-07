@@ -3,27 +3,45 @@ using Questions_NET.DataAccess;
 using Questions_NET.DataAccess.Repository.IRepository;
 using Questions_NET.DataAccess.Repository;
 using DotNetEnv;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowReactApp",
+    options.AddPolicy("AllowSpecificOrigin",
         policy =>
         {
-            policy.WithOrigins("https://silksharp.com") 
+            policy.WithOrigins("http://localhost:3000/")
                   .AllowAnyHeader()
                   .AllowAnyMethod()
-                  .AllowCredentials();
+                  .SetIsOriginAllowedToAllowWildcardSubdomains()
+                  .AllowAnyOrigin();
+
+
         });
 });
 var connectionString = Environment.GetEnvironmentVariable("SQLAZURECONNSTR_connectionString") ?? throw new InvalidOperationException("Connection string 'SQLAZURECONNSTR_connectionString' not found.");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 options.UseSqlServer(connectionString));
+builder.Configuration.AddEnvironmentVariables();
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"], 
+            ValidAudience = builder.Configuration["Jwt:Audience"], 
+            IssuerSigningKey = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])) // Ваш секретний ключ
+        };
+    });
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-builder.Configuration.AddEnvironmentVariables();
 var app = builder.Build();
 
 
@@ -36,7 +54,8 @@ var app = builder.Build();
 
 
 app.UseHttpsRedirection();
-app.UseCors("AllowReactApp");
+app.UseCors("AllowSpecificOrigin");
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

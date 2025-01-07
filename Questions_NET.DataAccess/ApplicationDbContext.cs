@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Net_QuestionsAPI.Models;
+using Questions_NET.Models.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,9 @@ namespace Questions_NET.DataAccess
         public DbSet<Interview> Interviews { get; set; }
         public DbSet<InterviewQuestion> InterviewsQuestions { get; set; }
         public DbSet<QuestionLink> QuestionLinks { get; set; }
+        public DbSet<User> Users { get; set; }
+        
+        public DbSet<FavoriteQuestion> FavoriteQuestions { get; set; }
 
     }
 }

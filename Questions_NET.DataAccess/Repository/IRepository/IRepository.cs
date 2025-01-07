@@ -9,9 +9,10 @@ namespace Questions_NET.DataAccess.Repository.IRepository
 {
     public interface IRepository<T> where T : class
     {
-        Task<IEnumerable<T>> GetAllASync();
-        Task<IEnumerable<T>> GetValuesASync(Expression<Func<T, bool>> filter);
-        Task AddASync(T entity);
+        Task<IEnumerable<T>> GetAllAsync();
+        Task<IEnumerable<T>> GetValuesAsync(Expression<Func<T, bool>> filter);
+        Task<T> GetValueAsync(Expression<Func<T, bool>> filter);
+        Task AddAsync(T entity);
         int test();
         void Remove(T entity);
     }

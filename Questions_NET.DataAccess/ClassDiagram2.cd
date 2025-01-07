@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Questions_NET.DataAccess.Repository.FavoriteQuestionRepository">
+    <Position X="4.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\FavoriteQuestionRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Questions_NET.DataAccess.Repository.InterviewQuestionRepository">
+    <Position X="8.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\InterviewQuestionRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Questions_NET.DataAccess.Repository.InterviewRepository">
+    <Position X="12.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\InterviewRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Questions_NET.DataAccess.Repository.QuestionLinksRepository">
+    <Position X="14" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\QuestionLinksRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Questions_NET.DataAccess.Repository.QuestionRepository">
+    <Position X="6.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\QuestionRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Questions_NET.DataAccess.Repository.Repository&lt;T&gt;">
+    <Position X="10.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAgAAAAAAAAAAAAAAABAEAAAAAAAQICAAAQAAAAAA=</HashCode>
+      <FileName>Repository\Repository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Questions_NET.DataAccess.Repository.UnitOfWork">
+    <Position X="18.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAFgAAAAAAAEAAAAAAAAAAAAIAAABAEAAAgAAAAAAA=</HashCode>
+      <FileName>Repository\UnitOfWork.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Questions_NET.DataAccess.Repository.UserRepository">
+    <Position X="16.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\UserRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Questions_NET.DataAccess.Repository.IRepository.IFavoriteQuestionRepository">
+    <Position X="5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\IRepository\IFavoriteQuestionRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Questions_NET.DataAccess.Repository.IRepository.IInterviewQuestionRepository">
+    <Position X="9" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\IRepository\IInterviewQuestionRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Questions_NET.DataAccess.Repository.IRepository.IInterviewRepository">
+    <Position X="12.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\IRepository\IInterviewRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Questions_NET.DataAccess.Repository.IRepository.IQuestionLinksRepository">
+    <Position X="14" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\IRepository\IQuestionLinksRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Questions_NET.DataAccess.Repository.IRepository.IQuestionRepository">
+    <Position X="7.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\IRepository\IQuestionRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Questions_NET.DataAccess.Repository.IRepository.IRepository&lt;T&gt;">
+    <Position X="10.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAABAEAAAAAAAQIAAAAQAAAAAA=</HashCode>
+      <FileName>Repository\IRepository\IRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Questions_NET.DataAccess.Repository.IRepository.IUnitOfWork">
+    <Position X="18.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAFAAAAAAAAEAAAAAAAAAAAAIAAABAEAAAgAAAAAAA=</HashCode>
+      <FileName>Repository\IRepository\IUnitOfWork.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Questions_NET.DataAccess.Repository.IRepository.IUserRepository">
+    <Position X="16.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\IRepository\IUserRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

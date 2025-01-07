@@ -15,6 +15,8 @@ namespace Questions_NET.DataAccess.Repository
         public IQuestionLinksRepository QuestionLink { get; private set; }
         public IInterviewQuestionRepository InterviewQuestion { get; private set; }
         public IInterviewRepository Interview { get; private set; }
+        public IUserRepository User { get; private set; }
+        public IFavoriteQuestionRepository FavoriteQuestion { get; private set; }
         public UnitOfWork(ApplicationDbContext db) 
         {
             _db = db;
@@ -22,8 +24,10 @@ namespace Questions_NET.DataAccess.Repository
             QuestionLink = new QuestionLinksRepository(_db);
             InterviewQuestion = new InterviewQuestionRepository(_db);
             Interview = new InterviewRepository(_db);
+            User = new UserRepository(_db);
+            FavoriteQuestion = new FavoriteQuestionRepository(_db);
         }
-        public async Task SaveASync()
+        public async Task SaveAsync()
         {
            await _db.SaveChangesAsync();
         }

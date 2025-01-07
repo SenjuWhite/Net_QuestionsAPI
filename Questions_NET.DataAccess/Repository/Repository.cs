@@ -18,24 +18,32 @@ namespace Questions_NET.DataAccess.Repository
             _db = db;
             this.dbSet = _db.Set<T>();
         }
-        public async Task AddASync(T entity)
+        public async Task AddAsync(T entity)
         {
             
             await dbSet.AddAsync(entity);
         }
 
-        public async Task<IEnumerable<T>> GetAllASync()
+
+        public async Task<IEnumerable<T>> GetAllAsync()
         {
             IQueryable<T> query = dbSet;
             return await query.ToListAsync();
         }
 
-        public async Task<IEnumerable<T>> GetValuesASync(Expression<Func<T, bool>> filter)
+
+        public async Task<T> GetValueAsync(Expression<Func<T, bool>> filter)
+        {
+            return await dbSet.FirstOrDefaultAsync(filter);
+        }
+
+        public async Task<IEnumerable<T>> GetValuesAsync(Expression<Func<T, bool>> filter)
         {
             IQueryable<T> query = dbSet;
            query = query.Where(filter);
             return await query.ToListAsync();
         }
+        
 
         public void Remove(T entity)
         {
