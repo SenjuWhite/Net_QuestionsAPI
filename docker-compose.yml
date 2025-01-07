@@ -1,0 +1,6 @@
+services:
+  net_questionsapi:
+    image: ${DOCKER_REGISTRY-}netquestionsapi
+    build:
+      context: .
+      dockerfile: Net_QuestionsAPI/Dockerfile

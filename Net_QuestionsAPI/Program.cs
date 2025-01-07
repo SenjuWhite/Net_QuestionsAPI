@@ -12,11 +12,11 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowSpecificOrigin",
         policy =>
         {
-            policy.WithOrigins("http://localhost:3000/")
+            policy.WithOrigins("https://silksharp.com/")
                   .AllowAnyHeader()
                   .AllowAnyMethod()
-                  .SetIsOriginAllowedToAllowWildcardSubdomains()
-                  .AllowAnyOrigin();
+                  .SetIsOriginAllowedToAllowWildcardSubdomains();
+                  //.AllowAnyOrigin();
 
 
         });
